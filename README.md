@@ -1,186 +1,151 @@
-# AI Workplace Assistant
+# Sesi — AI Workplace Productivity Assistant
 
-Build a modern, responsive web application called "AI Workplace Productivity Assistant".
+## Project Overview
 
-The application must be ONE integrated workplace productivity platform, not separate projects. It should help professionals save time by using AI to automate common workplace tasks.
+Sesi is an integrated AI-powered workplace productivity platform designed to help professionals, employees, administrators, managers, and students save time when completing everyday workplace tasks.
 
-TARGET USERS:
+The idea behind the project was to explore how AI can be applied to practical workplace problems rather than simply using AI as a general chatbot.
 
-Professionals, employees, administrators, managers, and students entering the workplace who need help with everyday productivity tasks.
+The platform brings five AI-powered productivity tools together in one application:
 
-CORE FEATURES:
+* **AI Chat** — provides general workplace productivity assistance.
+* **AI Research Assistant** — creates structured research briefs and practical insights.
+* **AI Task Planner** — organises and prioritises workplace tasks.
+* **Meeting Assistant** — structures meeting information into summaries, decisions, action items and deadlines.
+* **Smart Email Generator** — creates professional workplace emails based on the user's requirements.
 
-Create five AI-powered tools accessible from one dashboard:
+## The Problem
 
-1. SMART EMAIL GENERATOR
+Employees spend a significant amount of time on repetitive tasks such as writing emails, organising tasks, researching information and preparing meeting documentation.
 
-- Allow users to enter the purpose, recipient, key points, and desired tone.
+These tasks are necessary, but they can take time away from more valuable work.
 
-- Provide tone options: Formal, Friendly, and Persuasive.
+Sesi was created to demonstrate how AI can assist with these activities through one accessible productivity platform.
 
-- Generate a professional workplace email.
+## Key Features
 
-- Allow the generated email to be edited.
+### 💬 AI Workplace Chat
 
-- Include buttons to copy the result and clear the form.
+A general-purpose workplace assistant that can answer productivity-related questions and help users think through everyday workplace tasks.
 
-2. MEETING NOTES SUMMARIZER
+### 🔎 AI Research Assistant
 
-- Allow users to paste or enter long meeting notes.
+Generates structured research responses containing explanations, key insights, recommendations and areas for further research.
 
-- Generate a concise meeting summary.
+### 📋 AI Task Planner
 
-- Extract Action Items, Decisions Made, and Deadlines.
+Helps users organise tasks and create practical work plans while distinguishing between high, medium and low-priority tasks.
 
-- Present each category clearly in separate sections.
+### 📝 Meeting Assistant
 
-- Allow the generated output to be edited and copied.
+Transforms meeting information into structured outputs including:
 
-3. AI TASK PLANNER
+* Meeting summaries
+* Decisions made
+* Action items
+* Deadlines
 
-- Allow users to enter multiple tasks.
+### 📧 Smart Email Generator
 
-- Allow users to provide deadlines, estimated time, and priority where available.
+Generates professional workplace emails based on:
 
-- Use AI to organize and prioritize the tasks.
+* Purpose
+* Recipient
+* Key points
+* Desired tone
 
-- Generate a practical daily or weekly schedule.
+Available tones include Formal, Friendly and Persuasive.
 
-- Clearly distinguish high, medium, and low priority tasks.
+## AI Implementation
 
-- Allow the user to edit the generated plan.
+The five features use live AI functionality rather than simulated responses.
 
-4. AI RESEARCH ASSISTANT
+Each tool sends the user's request through the application's `runAssistant` server function. The function creates a structured prompt for the selected task and sends it to the AI model before returning the generated response to the user.
 
-- Allow users to enter a workplace-related research question or topic.
+The application was tested end-to-end and all five AI tools successfully generated responses using the live AI service.
 
-- Generate a structured explanation and summary.
+**Testing result: 5/5 AI features successfully working.**
 
-- Provide key insights, practical recommendations, and suggested areas for further research.
+## Prompt Engineering
 
-- Clearly indicate that AI-generated information should be verified before being used for important professional or academic decisions.
+Structured prompts were used to guide the AI toward useful and relevant workplace outputs.
 
-- Do not present unsupported information as verified fact.
+The prompts were designed around:
 
-5. AI WORKPLACE CHATBOT
+* The role of the AI
+* The task being performed
+* Relevant user context
+* Output requirements
+* Appropriate constraints
+* The desired structure and tone
 
-- Create an interactive workplace productivity assistant.
+For example, the Email Generator does not simply ask the AI to "write an email." It provides the information needed to produce a professional email appropriate to the user's purpose and selected tone.
 
-- Allow users to enter general workplace productivity questions and prompts.
+This helped demonstrate how prompt quality can influence the usefulness and consistency of AI-generated outputs.
 
-- Provide helpful, professional responses.
+## Responsible AI
 
-- Encourage users to verify important information.
+Sesi is designed to assist users rather than replace human judgement.
 
-APPLICATION STRUCTURE:
+Users are encouraged to:
 
-Create a professional dashboard layout with:
+* Review AI-generated information before using it.
+* Verify important facts and information.
+* Avoid entering confidential or sensitive workplace information.
+* Avoid relying on AI alone for important professional, academic, legal or financial decisions.
+* Remember that AI-generated information can contain errors or bias.
 
-- A left sidebar navigation on desktop.
+AI outputs should therefore be treated as assistance that requires appropriate human review.
 
-- Responsive navigation for mobile devices.
+## Testing
 
-- Dashboard/Home page.
+Each feature was tested using realistic workplace scenarios.
 
-- Separate pages or views for each AI tool.
+| Feature     | Result    |
+| ----------- | --------- |
+| AI Chat     | ✅ Working |
+| AI Research | ✅ Working |
+| AI Planner  | ✅ Working |
+| AI Meetings | ✅ Working |
+| AI Email    | ✅ Working |
 
-- Clear page titles and descriptions.
+The testing confirmed that all five features successfully connected to the live AI service and generated responses.
 
-- Consistent navigation throughout the application.
+## Technologies Used
 
-DASHBOARD:
+* React
+* TypeScript
+* TanStack Start
+* Tailwind CSS
+* AI API / AI gateway
+* Lovable
+* GitHub
 
-The home dashboard should include:
+## Development Approach
 
-- Welcome heading.
+Lovable was used to assist with the development of the application, while GitHub was used for version control and project storage.
 
-- Short explanation of what the AI Workplace Productivity Assistant does.
+The project was developed as **one integrated application** rather than five separate applications. All five AI tools share the same overall platform and navigation structure.
 
-- Feature cards for all five AI tools.
+## Future Improvements
 
-- A quick-access area allowing users to select a productivity tool.
+If development continued, possible improvements could include:
 
-- A clean, professional SaaS-style appearance.
+* User accounts and saved conversations
+* Document upload and analysis
+* Calendar integration
+* Meeting transcription
+* Additional workplace templates
+* Personalised AI assistance
+* Productivity analytics
 
-INPUT AND OUTPUT DESIGN:
+## Live Application
 
-Every AI feature must have:
+**Sesi:**
+https://9dbffd45-d059-44d0-b19c-c851042652ce.lovableproject.com
 
-- Clearly labelled input fields.
+## Project Purpose
 
-- Helpful placeholder text.
+This project was created as part of the **CAPACITI AI Skills Programme** to demonstrate practical AI implementation, prompt engineering, problem-solving, responsible AI use and modern UI/UX design.
 
-- A prominent action button.
-
-- Loading state while AI processing occurs.
-
-- Clearly separated AI-generated output.
-
-- Editable output where appropriate.
-
-- Copy-to-clipboard functionality where appropriate.
-
-- Clear/reset functionality.
-
-- Friendly error messages when required information is missing.
-
-DESIGN:
-
-Use a clean, modern, professional SaaS dashboard aesthetic.
-
-Use strong visual hierarchy, cards, rounded components, subtle shadows, clear typography, and professional icons.
-
-Keep the interface uncluttered and easy to understand.
-
-Make the application fully responsive for desktop, tablet, and mobile screens.
-
-Use consistent spacing, buttons, forms, and components throughout the application.
-
-RESPONSIBLE AI:
-
-Include a visible Responsible AI disclaimer in the application explaining that AI-generated outputs may contain errors and should be reviewed and verified before being used for important workplace, professional, academic, legal, financial, or other high-impact decisions.
-
-The AI should not fabricate sources, facts, or information when it does not have sufficient context.
-
-PROMPT ENGINEERING:
-
-Design structured AI prompts for each feature using clear roles, tasks, context, constraints, and expected output formats.
-
-The prompts should produce structured, useful, professional responses rather than generic answers.
-
-FUNCTIONALITY:
-
-Build the application so that the interface and interactions are functional and realistic.
-
-Use appropriate sample/demo behaviour if an external AI API has not yet been connected.
-
-Keep the code modular and maintainable.
-
-IMPORTANT:
-
-This is one integrated application containing multiple AI-powered workplace productivity features.
-
-Do not create five unrelated applications.
-
-Prioritize functionality, usability, professional UI/UX, responsible AI, and a polished presentation.
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/9dbffd45-d059-44d0-b19c-c851042652ce).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+> **The goal is not to replace the employee with AI, but to give the employee a smarter assistant.**
